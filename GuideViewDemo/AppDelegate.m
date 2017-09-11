@@ -21,10 +21,14 @@
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    
-    GuideView *vc = [[GuideView alloc]init];
-    [vc showGuideViewWithImageArray:@[@"10.gif",@"1.png",@"2.png",@"3.png"] WindowRootController:[ViewController new]];
-    self.window.rootViewController = vc;
+    // if 条件 是 判断是否是第一次进入，如果是第一次 就就如引导页，不是就设置正常的根控制器
+    if (YES) {
+        GuideView *vc = [[GuideView alloc]init];
+        [vc showGuideViewWithImageArray:@[@"10.gif",@"1.png",@"2.png",@"3.png"] WindowRootController:[ViewController new]];
+        self.window.rootViewController = vc;
+    }else{
+      /**-------------------你工程的根控制器--------------**/
+    }
     return YES;
 }
 
